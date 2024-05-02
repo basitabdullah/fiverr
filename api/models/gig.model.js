@@ -52,7 +52,7 @@ const GigSchema = new Schema(
       type: Number,
       required: true,
     },
-    revesionNumber: {
+    revisionNumber: {
       type: Number,
       required: true,
     },

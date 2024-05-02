@@ -1,6 +1,9 @@
 import express from "express";
-import { fn } from "../controllers/span.controller.js";
+import { verifyToken } from "../middlewares/jwt.js";
+import { createReview, deleteReview, getReview } from "../controllers/review.controller.js";
 
 const router = express.Router();
-router.get("/test", fn);
+router.post("/", verifyToken,createReview);
+router.get("/:id", getReview);
+router.delete("/:id", deleteReview);
 export default router;
