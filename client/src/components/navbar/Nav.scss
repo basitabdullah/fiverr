@@ -1,0 +1,105 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #013914;
+  color: white;
+  transition: 0.5s all ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &.active {
+    background-color: #fff;
+    color: black;
+  }
+
+  .container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+    .logo {
+      font-size: 34px;
+      font-weight: 700;
+
+
+      .dot {
+        color: #1dbf73;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      gap: 24px;
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        position: relative;
+      
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+
+        .options {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 10px;
+          border: 1px solid rgb(209, 209, 209);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          color: rgb(106, 106, 106);
+          width: 200px;
+          font-weight: 300;
+
+        }
+      }
+
+      .link {
+        color: #000000;
+        padding: 8px 20px;
+        border-radius: 5px;
+        border: 1px solid rgb(202, 202, 202);
+        background-color: white;
+        transition: 0.45s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #1dbf73;
+          color: white;
+          border:1px solid #1dbf73;
+        }
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    height: 0;
+    border: 0.5px solid rgb(237, 237, 237);
+  }
+
+  .menu {
+    width: 70%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 300;
+    color: gray;
+  }
+}
