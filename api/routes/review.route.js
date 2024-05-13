@@ -4,6 +4,6 @@ import { createReview, deleteReview, getReview } from "../controllers/review.con
 
 const router = express.Router();
 router.post("/", verifyToken,createReview);
-router.get("/:id", getReview);
+router.get("/:gigId", getReview);
 router.delete("/:id", deleteReview);
 export default router;

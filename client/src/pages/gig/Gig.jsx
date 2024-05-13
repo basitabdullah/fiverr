@@ -15,6 +15,8 @@ const Gig = () => {
       }),
   });
 
+
+  const userId = data?.userId
   const {
     isLoading: isLoadingUser,
     error: errorUser,
@@ -25,6 +27,7 @@ const Gig = () => {
       newRequest.get(`/users/${data.userId}`).then((res) => {
         return res.data;
       }),
+      enabled : !userId
   });
   return (
     <div className="gig">

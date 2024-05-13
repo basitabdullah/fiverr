@@ -1,6 +1,16 @@
 import express from "express";
-import { fn } from "../controllers/span.controller.js";
+import {
+  getConversations,
+  createConversation,
+  getSingleConversation,
+  updateConversation,
+} from "../controllers/conversation.controller.js";
+import { verifyToken } from "../middlewares/jwt.js";
 
 const router = express.Router();
-router.get("/test", fn);
+router.get("/", verifyToken, getConversations);
+router.post("/", verifyToken, createConversation);
+router.get("/single/:id", verifyToken, getSingleConversation);
+router.put("/:id", verifyToken, updateConversation);
+
 export default router;

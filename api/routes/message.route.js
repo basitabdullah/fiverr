@@ -1,6 +1,11 @@
 import express from "express";
-import { fn } from "../controllers/span.controller.js";
+import {
+  createMessage,
+  getMessages,
+} from "../controllers/message.controller.js";
+import { verifyToken } from "../middlewares/jwt.js";
 
 const router = express.Router();
-router.get("/test", fn);
+router.post("/", verifyToken, createMessage);
+router.get("/:id", verifyToken, getMessages);
 export default router;

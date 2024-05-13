@@ -8,7 +8,7 @@ export const createReview = async (req, res, next) => {
 
   const newReview = new Review({
     userId: req.userId,
-    gigId: req.body.userId,
+    gigId: req.body.gigId,
     desc: req.body.desc,
     star: req.body.star,
   });
@@ -30,8 +30,8 @@ export const createReview = async (req, res, next) => {
   }
 };
 export const getReview = async (req, res, next) => {
-  const reviews = await Review.find({ gigId: req.body.gigId });
-  res.status(201).send(reviews);
+  const reviews = await Review.find({ gigId: req.params.gigId});
+  res.status(200).send(reviews);
   try {
   } catch (err) {
     next(err);
